@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="1234今天看了关于mongodb的聚合方面，这时所做出的总结。聚合操作能够处理数据记录并且返回计算结果。聚合操作能够将多个文档中的值组合起来，对成组数据执行各种操作，返回单一的结果。它相当于SQL中的count（*）组合group by aggregate()方法对于MongoDB中的聚合操作，应该使用aggregate()方法 1、聚合表达式12345678910语法为:db.collecti">
+<meta name="description" content="1234今天看了关于mongodb的聚合方面，这时所做出的总结。聚合操作能够处理数据记录并且返回计算结果。聚合操作能够将多个文档中的值组合起来，对成组数据执行各种操作，返回单一的结果。它相当于SQL中的count（*）组合group by">
 <meta name="keywords" content="mongodb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB 聚合分析">
 <meta property="og:url" content="http://zlj.kim/2018/03/25/MongoDB-聚合分析/index.html">
 <meta property="og:site_name" content="Just for recording by ZLJ">
-<meta property="og:description" content="1234今天看了关于mongodb的聚合方面，这时所做出的总结。聚合操作能够处理数据记录并且返回计算结果。聚合操作能够将多个文档中的值组合起来，对成组数据执行各种操作，返回单一的结果。它相当于SQL中的count（*）组合group by aggregate()方法对于MongoDB中的聚合操作，应该使用aggregate()方法 1、聚合表达式12345678910语法为:db.collecti">
+<meta property="og:description" content="1234今天看了关于mongodb的聚合方面，这时所做出的总结。聚合操作能够处理数据记录并且返回计算结果。聚合操作能够将多个文档中的值组合起来，对成组数据执行各种操作，返回单一的结果。它相当于SQL中的count（*）组合group by">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-25T16:46:37.614Z">
+<meta property="og:updated_time" content="2018-03-25T17:48:12.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB 聚合分析">
-<meta name="twitter:description" content="1234今天看了关于mongodb的聚合方面，这时所做出的总结。聚合操作能够处理数据记录并且返回计算结果。聚合操作能够将多个文档中的值组合起来，对成组数据执行各种操作，返回单一的结果。它相当于SQL中的count（*）组合group by aggregate()方法对于MongoDB中的聚合操作，应该使用aggregate()方法 1、聚合表达式12345678910语法为:db.collecti">
+<meta name="twitter:description" content="1234今天看了关于mongodb的聚合方面，这时所做出的总结。聚合操作能够处理数据记录并且返回计算结果。聚合操作能够将多个文档中的值组合起来，对成组数据执行各种操作，返回单一的结果。它相当于SQL中的count（*）组合group by">
 
 
 
@@ -365,6 +365,7 @@
 
       
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">今天看了关于mongodb的聚合方面，这时所做出的总结。</span><br><span class="line">聚合操作能够处理数据记录并且返回计算结果。</span><br><span class="line">聚合操作能够将多个文档中的值组合起来，对成组数据执行各种操作，返回单一的结果。</span><br><span class="line">它相当于SQL中的count（*）组合group by</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h1 id="aggregate-方法"><a href="#aggregate-方法" class="headerlink" title="aggregate()方法"></a>aggregate()方法</h1><p>对于MongoDB中的聚合操作，应该使用<code>aggregate()</code>方法</p>
 <h3 id="1、聚合表达式"><a href="#1、聚合表达式" class="headerlink" title="1、聚合表达式"></a>1、聚合表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">语法为:</span><br><span class="line">db.collection.aggregate(pipeline, options)</span><br><span class="line">具体应用举例为：</span><br><span class="line">db.demo.aggregate([&#123;$group:&#123;_id:&quot;$&lt;key&gt;&quot;,num_movie:&#123;$sum:2&#125;&#125;&#125;])</span><br><span class="line">$&lt;key&gt;代表用来分组的key，num_movie为新生成的key，步长为2</span><br><span class="line">(key值若为value，成组个数为n)则返回文档类型为</span><br><span class="line">&#123;</span><br><span class="line">	&lt;key&gt; : value,</span><br><span class="line">	num_movie : 2*n</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <table>

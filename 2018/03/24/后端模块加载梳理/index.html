@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Just for recording by ZLJ">
 <meta property="og:description" content="1、首先项目启动node server.js 加载config中的环境配置 创建mongodb数据库的连接 加载了./models/index.js加载了所有数据库中的文档类型，并添加到mongoose.Schema dbsObject ==&amp;gt; 存储数据库对象，key==db.name; value==dbObject ==&amp;gt;该对象保存到mainDb dbsNames ==&amp;gt; 存">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-25T13:15:59.852Z">
+<meta property="og:updated_time" content="2018-03-25T17:48:53.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="后端模块加载梳理">
 <meta name="twitter:description" content="1、首先项目启动node server.js 加载config中的环境配置 创建mongodb数据库的连接 加载了./models/index.js加载了所有数据库中的文档类型，并添加到mongoose.Schema dbsObject ==&amp;gt; 存储数据库对象，key==db.name; value==dbObject ==&amp;gt;该对象保存到mainDb dbsNames ==&amp;gt; 存">
@@ -370,7 +370,8 @@
 <li>加载了./models/index.js加载了所有数据库中的文档类型，并添加到mongoose.Schema</li>
 <li>dbsObject ==&gt; 存储数据库对象，key==db.name; value==dbObject ==&gt;该对象保存到mainDb</li>
 <li>dbsNames ==&gt; 存储所有的{dbname，url}</li>
-<li>加载了./app并传入参数mainDb和dbsNames</li>
+<li>加载了./app并传入参数mainDb和dbsNames<a id="more"></a>
+</li>
 </ul>
 <h3 id="2、-app"><a href="#2、-app" class="headerlink" title="2、[./app]"></a>2、[./app]</h3><ul>
 <li>设置session，允许跨域请求，判断手机端，设置目录，后缀等一系列默认要求加载的事件</li>
