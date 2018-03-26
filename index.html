@@ -406,7 +406,8 @@
 
       
         
-          <h1 id="前台页面渲染"><a href="#前台页面渲染" class="headerlink" title="前台页面渲染"></a>前台页面渲染</h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><blockquote>
+          
+            <h1 id="前台页面渲染"><a href="#前台页面渲染" class="headerlink" title="前台页面渲染"></a>前台页面渲染</h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><blockquote>
 <ul>
 <li>public<ul>
 <li>js<ul>
@@ -435,14 +436,44 @@
 </li>
 <li>cancelEdit.html</li>
 <li>createTemplate.html</li>
-<li>topBarTemplate.html</li></ul></li></ul></li></ul></li></ul></blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/26/Page-rendering/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<li>topBarTemplate.html<br>!– more –&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="分析图"><a href="#分析图" class="headerlink" title="分析图"></a>分析图</h2><p><strong>画的比较烂</strong>╮(~﹏~)╭</p>
+<p><img src="/2018/03/26/Page-rendering/lct.png" alt="pending Rendering"></p>
+<h2 id="调用顺序"><a href="#调用顺序" class="headerlink" title="调用顺序"></a>调用顺序</h2><h3 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h3><blockquote>
+<p>加载/js/main.js</p>
+<p>加载/js/app.js</p>
+<p>加载/js/router.js（这里加载了很多重要的文件)</p>
+</blockquote>
+<h3 id="router-js"><a href="#router-js" class="headerlink" title="router.js"></a>router.js</h3><h4 id="得到路由"><a href="#得到路由" class="headerlink" title="得到路由"></a>得到路由</h4><blockquote>
+<p>‘easyErp/:contentType/list(/pId=:parrentContentId)(/p=:page)(/c=:countPerPage)(/filter=:filter)’: ‘goToList’</p>
+</blockquote>
+<h4 id="调用方法goToList"><a href="#调用方法goToList" class="headerlink" title="调用方法goToList"></a>调用方法goToList</h4><blockquote>
+<p>goToList: function (contentType, parrentContentId, page, countPerPage, filter)</p>
+</blockquote>
+<h4 id="调用方法goList"><a href="#调用方法goList" class="headerlink" title="调用方法goList"></a>调用方法goList</h4><blockquote>
+<p>function goList(context)</p>
+<ul>
+<li>contentViewUrl = ‘views/‘ + contentType + ‘/list/ListView’;</li>
+<li>topBarViewUrl = ‘views/‘ + contentType + ‘/TopBarView’;</li>
+</ul>
+</blockquote>
+<h4 id="解析TopBarView"><a href="#解析TopBarView" class="headerlink" title="解析TopBarView"></a>解析TopBarView</h4><p><strong>(view/:contentType/TopBarView)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var TopBarView = BaseView.extend(&#123;</span><br><span class="line">    el         : &apos;#top-bar&apos;,</span><br><span class="line">    contentType: CONSTANTS.WORKPOINT,</span><br><span class="line">    template: _.template(ContentTopBarTemplate)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>渲染页面<code>templates/workPoint/TopBarTemplate.html</code>(这里是以workPoint为例)</p>
+<h4 id="解析ListView"><a href="#解析ListView" class="headerlink" title="解析ListView"></a>解析ListView</h4><p><strong>（view/:contentType/list/ListView）</strong></p>
+<p>渲染页面<code>templates/workPoint/list/ListHeader.html</code></p>
+<p>加载文件<code>views/workPoint/list/ListItemView,views/workPoint/CreateView,views/workPoint/EditView</code></p>
+<p>(这里是以workPoint为例)</p>
+
+          
         
       
     </div>
