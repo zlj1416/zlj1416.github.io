@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA['Tip1']]></title>
+    <title><![CDATA[Tip1]]></title>
     <url>%2F2018%2F03%2F29%2FTip1%2F</url>
-    <content type="text"><![CDATA[####如何修改系统默认的下载地址 打开注册表编辑器，方法是：运行 -&gt; 输入regedit 找到注册表项HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion 在右侧你可以找到数值名称为ProgramFilesDir的项目，里面的默认数值数据为“C:\Program Files”，将这个值修改为你所需要设定的路径，比如“D:\software”，然后确定，推出注册表编辑器。 再次安装其他软件的时候，软件默认安装路径就会变成“D:\software”了！]]></content>
+    <content type="text"><![CDATA[如何修改系统默认的下载地址 打开注册表编辑器，方法是：运行 -&gt; 输入regedit 找到注册表项HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion 在右侧你可以找到数值名称为ProgramFilesDir的项目，里面的默认数值数据为“C:\Program Files”，将这个值修改为你所需要设定的路径，比如“D:\software”，然后确定，推出注册表编辑器。 再次安装其他软件的时候，软件默认安装路径就会变成“D:\software”了！]]></content>
       <categories>
         <category>小技巧</category>
       </categories>
