@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA['Tip1']]></title>
+    <url>%2F2018%2F03%2F29%2FTip1%2F</url>
+    <content type="text"><![CDATA[####如何修改系统默认的下载地址 打开注册表编辑器，方法是：运行 -&gt; 输入regedit 找到注册表项HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion 在右侧你可以找到数值名称为ProgramFilesDir的项目，里面的默认数值数据为“C:\Program Files”，将这个值修改为你所需要设定的路径，比如“D:\software”，然后确定，推出注册表编辑器。 再次安装其他软件的时候，软件默认安装路径就会变成“D:\software”了！]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Tip</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Page rendering]]></title>
     <url>%2F2018%2F03%2F26%2FPage-rendering%2F</url>
     <content type="text"><![CDATA[前台页面渲染目录结构 public js views bonusType list ListItemView.js ListView.js CreateView.js TopBarView.js router.js templates bonusType list listHeader.html listTemplate.html cancelEdit.html createTemplate.html topBarTemplate.html 分析图画的比较烂╮(~﹏~)╭ 调用顺序index.html 加载/js/main.js 加载/js/app.js 加载/js/router.js（这里加载了很多重要的文件) router.js得到路由 ‘easyErp/:contentType/list(/pId=:parrentContentId)(/p=:page)(/c=:countPerPage)(/filter=:filter)’: ‘goToList’ 调用方法goToList goToList: function (contentType, parrentContentId, page, countPerPage, filter) 调用方法goList function goList(context) contentViewUrl = ‘views/‘ + contentType + ‘/list/ListView’; topBarViewUrl = ‘views/‘ + contentType + ‘/TopBarView’; 解析TopBarView(view/:contentType/TopBarView) 12345var TopBarView = BaseView.extend(&#123; el : &apos;#top-bar&apos;, contentType: CONSTANTS.WORKPOINT, template: _.template(ContentTopBarTemplate)&#125;); 渲染页面templates/workPoint/TopBarTemplate.html(这里是以workPoint为例) 解析ListView（view/:contentType/list/ListView） 渲染页面templates/workPoint/list/ListHeader.html 加载文件views/workPoint/list/ListItemView,views/workPoint/CreateView,views/workPoint/EditView (这里是以workPoint为例)]]></content>
