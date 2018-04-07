@@ -314,6 +314,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zlj.kim/2018/04/07/vuejs-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shangxinganhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Just for recording by ZLJ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/07/vuejs-1/" itemprop="url">vuejs-1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T11:12:26+08:00">
+                2018-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>vue借鉴angular指令和react组件化</p>
+<p>后端用vue-resource实现，前端用vue-router实现</p>
+<p>可以使用vue.js完整开发移动app（组件化，模块化）</p>
+<p>vue-cli 脚手架</p>
+<p>vue-resource Ajax通信</p>
+<p>webpack 构建工具</p>
+<p>es6 + eslint   eslint是es6代码风格的检查工具（很严格）</p>
+<p>从传统后台MVC向REST API + 前端MV*迁移</p>
+<p>MVVM框架 （Angular react vue）</p>
+<p>View （视图，DOM）<-> ViewModel（通讯， 观察者） <-> Model（数据， JavaScript）</-></-></p>
+<p><strong>想回到以前版本的vue.js，可以用vue init webpack#1.0 xxxx</strong> </p>
+<p><strong>.eslintrc.js</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//有分号配置</span><br><span class="line">&apos;semi&apos;:[&apos;error&apos;,&apos;always&apos;],</span><br><span class="line">//设置缩进</span><br><span class="line">&apos;indent&apos;: 0</span><br></pre></td></tr></table></figure>
+<p>npm install stylus –save-dev</p>
+<p>npm install stylus-loader –save-dev</p>
+<p>“vue-router”:”^0.7.13”</p>
+<h1 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import VueRouter from &apos;vue-router&apos;;</span><br><span class="line">import App from &apos;./App&apos;;</span><br><span class="line">import goods from &apos;components/goods/goods&apos;;</span><br><span class="line">import ratings from &apos;components/ratings/ratings&apos;;</span><br><span class="line">import seller from &apos;components/seller/seller&apos;;</span><br><span class="line"></span><br><span class="line">// 加载公共样式</span><br><span class="line">import &apos;common/stylus/index.styl&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter);</span><br><span class="line"></span><br><span class="line">let app = Vue.extend(App);</span><br><span class="line"></span><br><span class="line">let router = new VueRouter(&#123;</span><br><span class="line">  linkActiveClass: &apos;active&apos;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">router.map(&#123;</span><br><span class="line">  &apos;/goods&apos;: &#123;</span><br><span class="line">    component: goods</span><br><span class="line">  &#125;,</span><br><span class="line">  &apos;/ratings&apos;: &#123;</span><br><span class="line">    component: ratings</span><br><span class="line">  &#125;,</span><br><span class="line">  &apos;seller&apos;: &#123;</span><br><span class="line">    component: seller</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 挂载点</span><br><span class="line">router.start(app, &apos;#app&apos;);</span><br><span class="line"></span><br><span class="line">router.go(&apos;/goods&apos;);</span><br></pre></td></tr></table></figure>
+<h1 id="设置页面路由"><a href="#设置页面路由" class="headerlink" title="设置页面路由"></a>设置页面路由</h1><p>dev-server.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var app = express()</span><br><span class="line"></span><br><span class="line">var appData = require(&apos;../data.json&apos;);</span><br><span class="line">var seller = appData.seller;</span><br><span class="line">var goods = appData.goods;</span><br><span class="line">var ratings = appData.ratings;</span><br><span class="line"></span><br><span class="line">var apiRoutes = express.Router();</span><br><span class="line"></span><br><span class="line">apiRoutes.get(&apos;/seller&apos;, function (req, res) &#123;</span><br><span class="line">  res.json(&#123;</span><br><span class="line">    errno: 0,</span><br><span class="line">    data: seller</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">apiRoutes.get(&apos;/goods&apos;, function (req, res) &#123;</span><br><span class="line">  res.json(&#123;</span><br><span class="line">    errno: 0,</span><br><span class="line">    data: goods</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">apiRoutes.get(&apos;/ratings&apos;, function (req, res) &#123;</span><br><span class="line">  res.json(&#123;</span><br><span class="line">    errno: 0,</span><br><span class="line">    data: ratings</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.use(&apos;/api&apos;, apiRoutes);</span><br></pre></td></tr></table></figure>
+<h1 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;v-header&gt;&lt;/v-header&gt;</span><br><span class="line">    &lt;div class=&quot;tab border-1px&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;tab-item&quot;&gt;</span><br><span class="line">        &lt;a v-link=&quot;&#123;path:&apos;/goods&apos;&#125;&quot;&gt;商品&lt;/a&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;tab-item&quot;&gt;</span><br><span class="line">        &lt;a v-link=&quot;&#123;path:&apos;/ratings&apos;&#125;&quot;&gt;评论&lt;/a&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;tab-item&quot;&gt;</span><br><span class="line">        &lt;a v-link=&quot;&#123;path:&apos;/seller&apos;&#125;&quot;&gt;商家&lt;/a&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">      I am content!</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import header from &apos;./components/header/header.vue&apos;;</span><br><span class="line"></span><br><span class="line">  export default &#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">      &apos;v-header&apos;: header</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/stylus&quot; lang=&quot;stylus&quot; rel=&quot;stylesheet/stylus&quot;&gt;</span><br><span class="line">  @import &quot;./common/stylus/mixin.styl&quot;</span><br><span class="line"></span><br><span class="line">  .tab</span><br><span class="line">    display: flex</span><br><span class="line">    width: 100%</span><br><span class="line">    height: 40px</span><br><span class="line">    line-height: 40px</span><br><span class="line">    // border-bottom: 1px solid rgba(7, 17, 27, 0.1)</span><br><span class="line">    border-1px(rgba(7, 17, 27, 0.1))</span><br><span class="line">    .tab-item</span><br><span class="line">      flex: 1</span><br><span class="line">      text-align: center</span><br><span class="line">      &amp;&gt;a</span><br><span class="line">        display: block</span><br><span class="line">        font-size: 14px</span><br><span class="line">        color: rgb(77, 85, 93)</span><br><span class="line">        &amp;.active</span><br><span class="line">          color: rgb(240, 20, 20)</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>goods.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;I am goods&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/ecmascript-6&quot;&gt;</span><br><span class="line">  export default &#123;&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;stylus&quot; rel=&quot;stylesheet/stylus&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="stylus"><a href="#stylus" class="headerlink" title="stylus"></a>stylus</h1><p>base.styl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)</span><br><span class="line">  .border-1px</span><br><span class="line">    &amp;::after</span><br><span class="line">      -webkit-transform : scaleY(0.7)</span><br><span class="line">      transform: scaleY(0.7)</span><br><span class="line"></span><br><span class="line">@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 1.5)</span><br><span class="line">  .border-1px</span><br><span class="line">    &amp;::after</span><br><span class="line">      -webkit-transform : scaleY(0.5)</span><br><span class="line">      transform: scaleY(0.5)</span><br></pre></td></tr></table></figure>
+<p>index.styl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;./mixin&quot;</span><br><span class="line">@import &quot;./icon&quot;</span><br><span class="line">@import &quot;./base&quot;</span><br></pre></td></tr></table></figure>
+<p>mixin.styl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">border-1px($color)</span><br><span class="line">  position : relative</span><br><span class="line">  &amp;:after</span><br><span class="line">    display : block</span><br><span class="line">    position : absolute</span><br><span class="line">    left : 0</span><br><span class="line">    bottom : 0</span><br><span class="line">    width : 100%</span><br><span class="line">    border-top : 1px solid $color</span><br><span class="line">    content : &apos;&apos;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zlj.kim/2018/03/29/Tip1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -967,7 +1136,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -978,7 +1147,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -989,7 +1158,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
