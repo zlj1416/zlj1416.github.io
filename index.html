@@ -458,6 +458,13 @@
 <li>git pull</li>
 <li>git branch –set-upstream dev origin/dev</li>
 </ul>
+<p>划重点划重点划重点！！！</p>
+<p>重要事情说三遍</p>
+<p>如果要在同一台电脑上配置两个github账号</p>
+<p>ssh-keygen -t rsa -C “<a href="mailto:xxxxxxx@163.com" target="_blank" rel="noopener">xxxxxxx@163.com</a>“  +  id_rsa_163</p>
+<p>在~/.ssh下面创建config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Host my.github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_163</span><br></pre></td></tr></table></figure>
+<p>然后如果要用hexo把_config.yml的<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a> 改成 <a href="mailto:git@my.github.com" target="_blank" rel="noopener">git@my.github.com</a></p>
 
           
         
