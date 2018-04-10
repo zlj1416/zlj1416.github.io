@@ -314,6 +314,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zlj.kim/2018/04/10/Git学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shangxinganhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Just for recording by ZLJ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/10/Git学习笔记/" itemprop="url">Git学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T22:04:00+08:00">
+                2018-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>part 1</p>
+<ul>
+<li>mkdir demo</li>
+<li>cd mkdir</li>
+<li>git init</li>
+<li>git status （查看修改状态） </li>
+<li>git checkout – file (没有add 后丢弃缓存区修改)</li>
+<li>git reset HEAD file   &gt;   git checkout – file (add 后丢弃缓存区修改)</li>
+<li>git add file （会暂存修改）</li>
+<li>git commit -m “123456”</li>
+<li>git config user.name “XXX”</li>
+<li>git config user.email “YYY”</li>
+<li>git log</li>
+<li>git show-branch</li>
+<li>git diff file（在git add之前查看修改情况）</li>
+<li>git log –pretty=oneline</li>
+<li>git reset –hard HEAD^ / HEAD^^ / HEAD~100 / (commit id 只要前几位就行)</li>
+<li>git rm (提交到版本库就不用担心误删，可以用git checkout – file恢复)</li>
+</ul>
+<p>github相关</p>
+<ul>
+<li>ssh-keygen -t rsa -C “<a href="mailto:xxxxxxx@example.com" target="_blank" rel="noopener">xxxxxxx@example.com</a>“(&gt; ~/.ssh/id_rsa.pub)</li>
+</ul>
+<ul>
+<li>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:ZhangLujie4/demo.git</li>
+<li>git push -u origin master(如果push不上去直接把-u改成-f， 强制上传;第一次加-u，之后就不用了)</li>
+<li>通过<code>ssh</code>支持的原生<code>git</code>协议速度最快</li>
+<li>git checkout -b dev</li>
+<li>git branch dev  +  git checkout dev</li>
+<li>git branch    查看当前branch</li>
+<li>git checkout dev/master    切换分支</li>
+<li>git merge dev  合并指定分支到当前分支</li>
+<li>git branch -d dev  删除分支(-D强行删除)</li>
+</ul>
+<p>part 2</p>
+<ul>
+<li>git log –graph</li>
+<li>git merge –no-ff -m “message” dev</li>
+<li>git log –graph –pretty=oneline –abbrev-commit</li>
+<li>git stash(储存当前工作现场)</li>
+<li>git stash list （查看工作现场记录）</li>
+<li>git stash apply + git stash drop (恢复工作区 + 删除)</li>
+<li>git stash pop （恢复&amp;删除）</li>
+</ul>
+<p>part 3</p>
+<ul>
+<li>git remote (-v)   远程仓库信息</li>
+<li>git push origin dev（branch id）</li>
+<li>git pull</li>
+<li>git branch –set-upstream dev origin/dev</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zlj.kim/2018/04/07/vuejs-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1122,7 +1314,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1133,7 +1325,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1144,7 +1336,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
