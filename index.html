@@ -406,8 +406,7 @@
 
       
         
-          
-            <p>part 1</p>
+          <p>part 1</p>
 <ul>
 <li>mkdir demo</li>
 <li>cd mkdir</li>
@@ -424,49 +423,14 @@
 <li>git diff file（在git add之前查看修改情况）</li>
 <li>git log –pretty=oneline</li>
 <li>git reset –hard HEAD^ / HEAD^^ / HEAD~100 / (commit id 只要前几位就行)</li>
-<li>git rm (提交到版本库就不用担心误删，可以用git checkout – file恢复)</li>
-</ul>
-<p>github相关</p>
-<ul>
-<li>ssh-keygen -t rsa -C “<a href="mailto:xxxxxxx@example.com" target="_blank" rel="noopener">xxxxxxx@example.com</a>“(&gt; ~/.ssh/id_rsa.pub)</li>
-</ul>
-<ul>
-<li>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:ZhangLujie4/demo.git</li>
-<li>git push -u origin master(如果push不上去直接把-u改成-f， 强制上传;第一次加-u，之后就不用了)</li>
-<li>通过<code>ssh</code>支持的原生<code>git</code>协议速度最快</li>
-<li>git checkout -b dev</li>
-<li>git branch dev  +  git checkout dev</li>
-<li>git branch    查看当前branch</li>
-<li>git checkout dev/master    切换分支</li>
-<li>git merge dev  合并指定分支到当前分支</li>
-<li>git branch -d dev  删除分支(-D强行删除)</li>
-</ul>
-<p>part 2</p>
-<ul>
-<li>git log –graph</li>
-<li>git merge –no-ff -m “message” dev</li>
-<li>git log –graph –pretty=oneline –abbrev-commit</li>
-<li>git stash(储存当前工作现场)</li>
-<li>git stash list （查看工作现场记录）</li>
-<li>git stash apply + git stash drop (恢复工作区 + 删除)</li>
-<li>git stash pop （恢复&amp;删除）</li>
-</ul>
-<p>part 3</p>
-<ul>
-<li>git remote (-v)   远程仓库信息</li>
-<li>git push origin dev（branch id）</li>
-<li>git pull</li>
-<li>git branch –set-upstream dev origin/dev</li>
-</ul>
-<p>划重点划重点划重点！！！</p>
-<p>重要事情说三遍</p>
-<p>如果要在同一台电脑上配置两个github账号</p>
-<p>ssh-keygen -t rsa -C “<a href="mailto:xxxxxxx@163.com" target="_blank" rel="noopener">xxxxxxx@163.com</a>“  +  id_rsa_163</p>
-<p>在~/.ssh下面创建config</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Host my.github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_163</span><br></pre></td></tr></table></figure>
-<p>然后如果要用hexo把_config.yml的<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a> 改成 <a href="mailto:git@my.github.com" target="_blank" rel="noopener">git@my.github.com</a></p>
-
-          
+<li>git rm (提交到版本库就不用担心误删，可以用git checkout – file恢复)</li></ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/10/Git学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
